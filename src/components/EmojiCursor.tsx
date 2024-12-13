@@ -1,5 +1,5 @@
 import { useCursorify } from '@cursorify/react'
-
+import React from 'react';
 const EmojiCursor = () => {
   const { mouseState, style } = useCursorify()
   const disabled = false;
