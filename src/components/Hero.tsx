@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../index.css';
 import { Rocket, ArrowRight } from 'lucide-react';
 import { Link, NavLink } from 'react-router';
-import ServiceModal from './Modal';
+import ServiceModal from './ServiceModal/ServiceModal';
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);

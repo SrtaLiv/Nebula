@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Sparkles } from 'lucide-react';
+import ServiceModal from './ServiceModal/ServiceModal';
 
 export default function CallToAction() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
   return (
     <section className="relative bg-gradient-to-b from-black to-purple-950 py-24">
       {/* Background stars effect */}
@@ -14,13 +17,18 @@ export default function CallToAction() {
           ¿Tienes algún proyecto en mente?
         </h2>
         
-        <button 
+        <button onClick={() => setIsModalOpen(true)}
           className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full text-lg font-semibold transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
         >
           <Sparkles className="animate-pulse" />
           Comencemos
         </button>
       </div>
+        {/* Service Modal */}
+            <ServiceModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
     </section>
   );
 }

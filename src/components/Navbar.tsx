@@ -40,20 +40,7 @@ export default function Navbar() {
               <a className="text-white hover:text-purple-400 transition-colors">
                 <div>
                   {/* Botón para abrir el popup */}
-                  <button onClick={openPopup}>ContactoForm</button>
-                  {/* Popup: se muestra si isPopupOpen es true */}
-                  {isPopupOpen && (
-                    <div className="bg-white color-black p-4 rounded-lg shadow-lg absolute top-50 left-20 right-20 mt-20">
-                      <div className='hover:none'>
-                        <h1>por que quieres contactarnos?</h1>
-                        <p>Contenido del popup</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ullam aliquid natus ab! Libero maiores illo harum. Voluptatum voluptate nobis pariatur placeat animi consequatur totam dignissimos! Deserunt nulla provident at.</p>
-                        {/* Botón para cerrar el popup */}
-                        <a className='font-bold' onClick={closePopup}>Cerrar</a>
-                        <a href="">next</a>
-                      </div>
-                    </div>
-                  )}
+                  <button>Contacto</button>
                 </div>
               </a>
               <a href="#sobre-nosotros" className="text-white hover:text-purple-400 transition-colors">Sobre nosotros</a>

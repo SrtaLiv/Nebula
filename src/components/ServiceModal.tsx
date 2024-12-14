@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { X } from 'lucide-react';
-import ServiceStep from './ServiceStep';
-import BudgetStep from './BudgetStep';
+import React from 'react';
+import { X, Palette, Globe, Smartphone } from 'lucide-react';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -9,31 +7,25 @@ interface ServiceModalProps {
 }
 
 export default function ServiceModal({ isOpen, onClose }: ServiceModalProps) {
-  const [step, setStep] = useState<'service' | 'budget'>('service');
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
-
   if (!isOpen) return null;
 
-  const handleServiceToggle = (serviceId: string) => {
-    setSelectedServices(prev =>
-      prev.includes(serviceId)
-        ? prev.filter(id => id !== serviceId)
-        : [...prev, serviceId]
-    );
-  };
-
-  const handleNext = () => {
-    setStep('budget');
-  };
-
-  const handleBack = () => {
-    setStep('service');
-  };
-
-  const handleBudgetSelect = (budgetId: string) => {
-    setSelectedBudget(budgetId);
-  };
+  const services = [
+    {
+      title: "UX/UI",
+      icon: <Palette size={32} />,
+      description: "Diseño de interfaces y experiencias de usuario",
+    },
+    {
+      title: "WEB",
+      icon: <Globe size={32} />,
+      description: "Desarrollo de aplicaciones web",
+    },
+    {
+      title: "MOBILE",
+      icon: <Smartphone size={32} />,
+      description: "Desarrollo de aplicaciones móviles",
+    },
+  ];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -55,19 +47,28 @@ export default function ServiceModal({ isOpen, onClose }: ServiceModalProps) {
 
         {/* Content */}
         <div className="p-8">
-          {step === 'service' ? (
-            <ServiceStep
-              selectedServices={selectedServices}
-              onServiceToggle={handleServiceToggle}
-              onNext={handleNext}
-            />
-          ) : (
-            <BudgetStep
-              selectedBudget={selectedBudget}
-              onBudgetSelect={handleBudgetSelect}
-              onBack={handleBack}
-            />
-          )}
+          <h2 className="text-4xl font-['Bebas_Neue'] text-white text-center mb-8 tracking-wider">
+            ¿Qué servicio quieres elegir?
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <button
+                key={index}
+                className="group flex flex-col items-center p-6 bg-purple-900/50 rounded-xl hover:bg-purple-800/50 transition-all transform hover:scale-105"
+              >
+                <div className="text-purple-300 group-hover:text-purple-100 transition-colors mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="font-['Bebas_Neue'] text-2xl text-white mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-purple-200 text-center text-sm">
+                  {service.description}
+                </p>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
