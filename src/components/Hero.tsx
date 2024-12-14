@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-5xl sm:text-7xl font-['Bebas_Neue'] text-white mb-8 tracking-wider">
-          Hacemos tu pagina realidad
+          Hacemos tus ideas realidad
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
