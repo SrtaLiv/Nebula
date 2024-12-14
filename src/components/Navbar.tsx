@@ -1,7 +1,7 @@
 import React from 'react';
 import { Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 export default function Navbar() {
   // Estado para controlar la visibilidad del popup
@@ -37,17 +37,19 @@ export default function Navbar() {
             <div className="ml-10 flex items-center space-x-8">
               <a href="#inicio" className="text-white hover:text-purple-400 transition-colors">Inicio</a>
 
-              <a className="text-white hover:text-purple-400 transition-colors">
-                <div>
-                  {/* Botón para abrir el popup */}
-                  <button>Contacto</button>
-                </div>
-              </a>
               <a href="#sobre-nosotros" className="text-white hover:text-purple-400 transition-colors">Sobre nosotros</a>
               <button className="text-white hover:text-purple-400 transition-colors flex items-center gap-2">
-                <Globe size={20} />
-                Idioma
+                Proyectos
               </button>
+
+              <Link
+                to="/contact"
+                className="px-4 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105s"
+              >
+                <span className="text-xm tracking-wider">
+                  Contactanos
+                </span>
+              </Link>
             </div>
           </div>
 
@@ -74,13 +76,6 @@ export default function Navbar() {
               Inicio
             </a>
             <a
-              href="#contacto"
-              className="text-white block px-3 py-2 hover:text-purple-400"
-              onClick={closeMenu}
-            >
-              Contacto
-            </a>
-            <a
               href="#projects"
               className="text-white block px-3 py-2 hover:text-purple-400"
               onClick={closeMenu}
@@ -92,12 +87,19 @@ export default function Navbar() {
               className="text-white block px-3 py-2 hover:text-purple-400"
               onClick={closeMenu}
             >
-              Sobre nosotros
+              Nosotros
             </a>
             <button className="text-white flex items-center gap-2 px-3 py-2 hover:text-purple-400">
-              <Globe size={20} />
-              Idioma
+              Proyectos
             </button>
+            <Link
+              to="/contact"
+              className="px-4 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105s"
+            >
+              <span className="text-xm tracking-wider">
+                Contactanos
+              </span>
+            </Link>
           </div>
         </div>
       )}

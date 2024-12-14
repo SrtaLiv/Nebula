@@ -4,10 +4,11 @@ import { ArrowLeft } from 'lucide-react';
 interface BudgetStepProps {
   selectedBudget: string | null;
   onBudgetSelect: (budget: string) => void;
+  onNext: () => void;
   onBack: () => void;
 }
 
-export default function BudgetStep({ selectedBudget, onBudgetSelect, onBack }: BudgetStepProps) {
+export default function BudgetStep({ selectedBudget, onBudgetSelect, onBack, onNext }: BudgetStepProps) {
   const budgetRanges = [
     {
       id: "small",
@@ -67,6 +68,16 @@ export default function BudgetStep({ selectedBudget, onBudgetSelect, onBack }: B
           </button>
         ))}
       </div>
+      <div className="flex justify-end">
+        <button
+        className="px-6 py-3 rounded-lg font-semibold transition-all bg-purple-600 text-white hover:bg-purple-700"
+          onClick={onNext}
+          disabled={!selectedBudget}
+        >
+          Siguiente
+        </button>
+      </div>
+      
     </div>
   );
 }

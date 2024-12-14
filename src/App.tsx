@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import { CursorifyProvider } from '@cursorify/react';
 import EmojiCursor from './components/EmojiCursor';
 import { Routes } from 'react-router';
+import AboutResume from './components/AboutUs/AboutResume';
 
 export default function App() {
   return (
@@ -17,6 +18,9 @@ export default function App() {
         <Navbar />
         <section id="inicio">
           <Hero />
+        </section>
+        <section id="servicios">
+          <AboutResume />
         </section>
         <section id="servicios">
           <Services />

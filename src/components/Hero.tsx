@@ -36,7 +36,7 @@ export default function Hero() {
 
           <Link
             to="/projects"
-            className="px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400/10 rounded-full flex items-center justify-center gap-2 transition-all"
+            className="px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400/10 rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105"
           >
             <span className="text-xm tracking-wider">
               Conoce más
