@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../index.css';
 import { Rocket, ArrowRight } from 'lucide-react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import ServiceModal from './Modal';
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with nebula effect */}
@@ -23,24 +26,31 @@ export default function Hero() {
           Hacemos tu pagina realidad
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105" >
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105"
+          >
             <Rocket size={20} />
             Comienza tu viaje
           </button>
 
-          <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400/10 rounded-full flex items-center justify-center gap-2 transition-all">
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `text-4xl text-white tracking-wider ${isActive ? "active" : ""}`
-              }
-            >
-            </NavLink>
-            Conoce más
+          <Link
+            to="/projects"
+            className="px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400/10 rounded-full flex items-center justify-center gap-2 transition-all"
+          >
+            <span className="text-xm tracking-wider">
+              Conoce más
+            </span>
             <ArrowRight size={20} />
-          </button>
+          </Link>
         </div>
       </div>
+
+      {/* Service Modal */}
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }
