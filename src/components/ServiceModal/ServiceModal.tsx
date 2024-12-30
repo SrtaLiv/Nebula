@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { X } from 'lucide-react';
-import ServiceStep from './ServiceStep';
-import BudgetStep from './BudgetStep';
-import ContactStep from './ContactStep';
+import React from 'react';
+import { X, Palette, Globe, Smartphone } from 'lucide-react';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -10,53 +7,38 @@ interface ServiceModalProps {
 }
 
 export default function ServiceModal({ isOpen, onClose }: ServiceModalProps) {
-  const [step, setStep] = useState<'service' | 'budget' | 'contact'>('service');
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
-  const [contactData, setContactData] = useState({ name: '', email: '', country: '', phone: '' });
-
   if (!isOpen) return null;
 
-  const handleServiceToggle = (serviceId: string) => {
-    setSelectedServices(prev =>
-      prev.includes(serviceId)
-        ? prev.filter(id => id !== serviceId)
-        : [...prev, serviceId]
-    );
-  };
-
-  const handleNext = () => {
-    if (step === 'service') setStep('budget');
-    if (step === 'budget') setStep('contact');
-  };
-
-  const handleBack = () => {
-    if (step === 'budget') setStep('service');
-    if (step === 'contact') setStep('budget');
-  };
-
-  const handleBudgetSelect = (budgetId: string) => {
-    setSelectedBudget(budgetId);
-  };
-
-  const handleContactSubmit = (formData: { name: string; email: string; country: string; phone: string }) => {
-    setContactData(formData);
-    // Submit logic can go here
-    onClose();
-  };
+  const services = [
+    {
+      title: "UX/UI",
+      icon: <Palette size={32} />,
+      description: "Diseño de interfaces y experiencias de usuario",
+    },
+    {
+      title: "WEB",
+      icon: <Globe size={32} />,
+      description: "Desarrollo de aplicaciones web",
+    },
+    {
+      title: "MOBILE",
+      icon: <Smartphone size={32} />,
+      description: "Desarrollo de aplicaciones móviles",
+    },
+  ];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
-      <div
+      <div 
         className="absolute inset-0 bg-black/80 backdrop-blur-sm"
         onClick={onClose}
       />
-
+      
       {/* Modal */}
       <div className="relative bg-purple-950 w-full max-w-4xl m-4 rounded-2xl shadow-2xl overflow-hidden">
         {/* Close button */}
-        <button
+        <button 
           onClick={onClose}
           className="absolute top-4 right-4 text-purple-300 hover:text-white transition-colors"
         >
@@ -65,29 +47,28 @@ export default function ServiceModal({ isOpen, onClose }: ServiceModalProps) {
 
         {/* Content */}
         <div className="p-8">
-          {step === 'service' && (
-            <ServiceStep
-              selectedServices={selectedServices}
-              onServiceToggle={handleServiceToggle}
-              onNext={handleNext}
-            />
-          )}
+          <h2 className="text-4xl font-['Bebas_Neue'] text-white text-center mb-8 tracking-wider">
+            ¿Qué servicio quieres elegir?
+          </h2>
 
-          {step === 'budget' && (
-            <BudgetStep
-              selectedBudget={selectedBudget}
-              onBudgetSelect={handleBudgetSelect}
-              onNext={handleNext}
-              onBack={handleBack}
-            />
-          )}
-
-          {step === 'contact' && (
-            <ContactStep
-              onNext={handleContactSubmit}
-              onBack={handleBack}
-            />
-          )}
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <button
+                key={index}
+                className="group flex flex-col items-center p-6 bg-purple-900/50 rounded-xl hover:bg-purple-800/50 transition-all transform hover:scale-105"
+              >
+                <div className="text-purple-300 group-hover:text-purple-100 transition-colors mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="font-['Bebas_Neue'] text-2xl text-white mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-purple-200 text-center text-sm">
+                  {service.description}
+                </p>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

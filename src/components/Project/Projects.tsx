@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 
-export default function Projects() {
+export default function Project() {
   const projects = [
     {
       title: "LinkShare",

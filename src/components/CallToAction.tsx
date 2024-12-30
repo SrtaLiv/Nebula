@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles } from 'lucide-react';
-import ServiceModal from './ServiceModal/ServiceModal';
+import ServiceModal from './ServiceModal/StepModal';
 
 export default function CallToAction() {
     const [isModalOpen, setIsModalOpen] = useState(false);
