@@ -6,6 +6,7 @@ import './index.css';
 import { BrowserRouter, Route, Routes } from "react-router";
 import About from './pages/About.tsx';
 import Projects from './pages/Projects.tsx';
+import { CaseStudyDetail } from './components/Project/CaseStudyDetails.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')!).render(
       {/* Ruta para Contact */}
       <Route path="/proyectos" element={<Projects />} />
       <Route path="/nosotros" element={<About />} />
+      <Route path="/case-study/:id" element={<CaseStudyDetail />} />
       </Routes>
     </StrictMode>
   </BrowserRouter>

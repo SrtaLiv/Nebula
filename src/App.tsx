@@ -7,9 +7,7 @@ import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import { CursorifyProvider } from '@cursorify/react';
 import EmojiCursor from './components/EmojiCursor';
-import { Routes } from 'react-router';
-import AboutResume from './components/AboutUs/AboutResume';
-import Projects from './pages/Projects';
+import Cases from './components/Cases';
 
 export default function App() {
   return (
@@ -17,7 +15,7 @@ export default function App() {
       <div className="min-h-screen bg-black">
         <Navbar />
         <Hero />
-        <AboutResume />
+        <Cases/>
         <Services />
         <DevelopmentProcess />
         <CallToAction />
