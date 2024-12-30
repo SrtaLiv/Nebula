@@ -9,6 +9,7 @@ import { CaseStudyDetail } from './components/Project/CaseStudyDetails.tsx';
 import Cases from './components/Cases.tsx';
 import CasesDetail from './pages/CasesDetail.tsx';
 import CasesAll from './pages/CasesAll.tsx';
+import Prueba from './pages/Prueba.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/" element={<App />} />
       {/* Ruta para Contact */}
       <Route path="/nosotros" element={<About />} />
+      <Route path="/prueba" element={<Prueba />} />
       <Route path="/proyectos" element={<CasesAll />} />
       <Route path="/proyectos/:id" element={<CasesDetail />} />
       </Routes>
