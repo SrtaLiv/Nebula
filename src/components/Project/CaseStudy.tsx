@@ -20,7 +20,7 @@ export function CaseStudy({ id, title, description, imageUrl, tags = [] }: CaseS
         </div>
       </div>
       <Link
-        to={`/proyecto/${id}`}
+        to={`/proyectos/${id}`}
         className="text-xl font-semibold mb-2 text-gray-800 hover:text-blue-600 transition-colors"
       >
         {title}

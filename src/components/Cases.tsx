@@ -13,16 +13,17 @@ export default function Cases() {
                     Explora algunos de nuestros proyectos más destacados, donde transformamos ideas en experiencias digitales excepcionales.
                 </p>
 
-                <div className="hide grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {caseStudies.map((study) => (
-                        <CaseStudy
-                            key={study.id}
-                            id={study.id}
-                            title={study.title}
-                            description={study.description}
-                            imageUrl={study.imageUrl}
-                            tags={study.tags}
-                        />
+                        <div key={study.id} className="hide">
+                            <CaseStudy
+                                id={study.id}
+                                title={study.title}
+                                description={study.description}
+                                imageUrl={study.imageUrl}
+                                tags={study.tags}
+                            />
+                        </div>
                     ))}
                 </div>
             </div>
