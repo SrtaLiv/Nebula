@@ -22,12 +22,6 @@ export default function Footer() {
               <li><a href="#inicio" className="text-purple-300 hover:text-purple-100 transition-colors">Inicio</a></li>
               <li><a href="#contacto" className="text-purple-300 hover:text-purple-100 transition-colors">Contacto</a></li>
               <li><a href="#sobre-nosotros" className="text-purple-300 hover:text-purple-100 transition-colors">Sobre nosotros</a></li>
-              <li>
-                <button className="text-purple-300 hover:text-purple-100 transition-colors flex items-center gap-2">
-                  <Globe size={16} />
-                  Idioma
-                </button>
-              </li>
             </ul>
           </div>
 

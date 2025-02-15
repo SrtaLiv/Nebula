@@ -10,7 +10,7 @@ const EmojiCursor = () => {
       style={{
         width: 20,
         height: 20,
-        backgroundColor: mouseState === 'mouseDown' ? '#ff6347' : '#4caf50', // Cambia el color según el estado del mouse
+        backgroundColor: mouseState === 'mouseDown' ? '#9e33ff' : '#360068 ', // Cambia el color según el estado del mouse
         borderRadius: '50%',
         position: 'absolute',
         pointerEvents: 'none',

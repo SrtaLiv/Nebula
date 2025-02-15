@@ -33,10 +33,6 @@ export default function Navbar() {
                   Sobre nosotros
                 </Link>
 
-                <Link to="/proyectos" className="text-white hover:text-purple-400 transition-colors flex items-center gap-2">
-                  Proyectos
-                </Link>
-
                 <button
                   onClick={() => setIsModalOpen(true)}
                   className="px-4 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105"
