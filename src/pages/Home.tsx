@@ -39,7 +39,6 @@ export default function Home() {
             <Hero />
             <Cases />
             <Services />
-            <DevelopmentProcess />
             <CallToAction />
             <Footer />
         </div>

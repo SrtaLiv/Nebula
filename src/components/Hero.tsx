@@ -19,8 +19,6 @@ export default function Hero() {
       <div className="space stars2"></div>
       <div className="space stars3"></div>
 
-
-      {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-5xl sm:text-7xl font-['Bebas_Neue'] text-white mb-8 tracking-wider">
           Hacemos tus ideas realidad
@@ -31,18 +29,8 @@ export default function Hero() {
             className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105"
           >
             <Rocket size={20} />
-            Comienza tu viaje
+            Contactanos
           </button>
-
-          <Link
-            to="/proyectos"
-            className="px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400/10 rounded-full flex items-center justify-center gap-2 transition-all transform hover:scale-105"
-          >
-            <span className="text-xm tracking-wider">
-              Conoce más
-            </span>
-            <ArrowRight size={20} />
-          </Link>
         </div>
       </div>
 
